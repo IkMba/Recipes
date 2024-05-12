@@ -7,9 +7,11 @@ function Search() {
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
-  useKey("Enter", function () {
+  useKey("Enter", function (e) {
     if (document.activeElement === inputRef.current)
       navigate(`/recipes/${query}`);
+    setQuery("");
+    if (e.keyCode === 13) navigate(`/recipes/${query}`);
     setQuery("");
   });
 
