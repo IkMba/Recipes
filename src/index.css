@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind plugin;
+
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: Gatile;
+    src: url("./fonts/Gatile.otf");
+    font-weight: 900;
+  }
+}
+
+body,
+* {
+  color: #2d2b2b;
+  box-sizing: border-box;
+}
