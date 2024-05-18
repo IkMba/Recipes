@@ -1,6 +1,6 @@
 function CardSket() {
   return (
-    <div className=" basis-full md:basis-44 grow shadow-md ">
+    <div className=" basis-44 md:basis-44 grow shadow-md ">
       <figure className="relative">
         <div
           alt="recipe-image"

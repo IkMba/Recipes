@@ -3,6 +3,7 @@ import { useGetRecipes } from "../services/queries";
 import Card, { ShowMoreCard } from "./Card";
 import { useSelector } from "react-redux";
 import { getFilters } from "../slices/appSlice";
+import CardSket from "./CardSket";
 
 function Recipes() {
   const params = useParams();
@@ -10,7 +11,7 @@ function Recipes() {
 
   const filter = useSelector(getFilters);
   const query = `&q=${searchQuery}${filter}`;
-  const { recipes } = useGetRecipes(query);
+  const { recipes, isLoading } = useGetRecipes(query);
   // console.log(filter);
   // console.log(recipes);
 
@@ -20,13 +21,15 @@ function Recipes() {
         {searchQuery} Recipes
       </h2>
       <div className="flex flex-wrap gap-4 ">
-        {recipes?.map((item, i) =>
-          i === recipes.length - 1 ? (
-            <ShowMoreCard key={i} />
-          ) : (
-            <Card item={item?.recipe} key={item.label} />
-          )
-        )}
+        {isLoading && [...Array(10)].map((i) => <CardSket key={i} />)}
+        {!isLoading &&
+          recipes?.map((item, i) =>
+            i === recipes.length - 1 ? (
+              <ShowMoreCard key={i} />
+            ) : (
+              <Card item={item?.recipe} key={item.label} />
+            )
+          )}
       </div>
     </div>
   );

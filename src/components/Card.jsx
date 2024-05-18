@@ -23,7 +23,7 @@ function Card({ item }) {
   return (
     <Link
       to={`/recipe/${id}`}
-      className=" md:basis-44 md:max-w-[16rem] grow shadow-md"
+      className=" basis-44 md:basis-44 md:max-w-[16rem] grow shadow-md"
     >
       <figure className="relative">
         <Img

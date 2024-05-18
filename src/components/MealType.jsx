@@ -19,7 +19,7 @@ function MealType() {
         <Search />
       </div>
       <div className="flex gap-4 flex-wrap rounded-t-md">
-        {isLoading && [...Array(10)].map((item, i) => <CardSket key={i} />)}
+        {isLoading && [...Array(10)].map((i) => <CardSket key={i} />)}
         {!isLoading &&
           recipes?.map((item, i) =>
             i === recipes.length - 1 ? (
