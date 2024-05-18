@@ -8,11 +8,10 @@ function Search() {
   const inputRef = useRef(null);
 
   useKey("Enter", function (e) {
-    if (document.activeElement === inputRef.current)
+    if (document.activeElement === inputRef.current) {
       navigate(`/recipes/${query}`);
-    setQuery("");
-    if (e.keyCode === 13) navigate(`/recipes/${query}`);
-    setQuery("");
+      setQuery("");
+    }
   });
 
   return (
