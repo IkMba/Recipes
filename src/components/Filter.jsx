@@ -1,25 +1,25 @@
-import Button from "./Button";
-import { filterButtonData } from "../data/data";
-import FilterButton from "./FilterButton";
-import { useDispatch, useSelector } from "react-redux";
-import { addFilter, clearFilters, getFilters } from "../slices/appSlice";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import Button from "./Button";
+import FilterButton from "./FilterButton";
+
+import { filterButtonData } from "../data/data";
+import { addFilter, clearFilters } from "../slices/appSlice";
 
 function Filter() {
   const [active, setActive] = useState("");
   const [filterData, setFilterData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
-  const filters = useSelector(getFilters);
-
   const filteredData = [...new Set(filterData)];
   const dispatch = useDispatch();
   const hasFilter = filterData.length > 0;
-  // console.log(filterData);
-  // console.log(filters);
 
   return (
-    <div className={`px-4 flex gap-4 items-center `}>
+    <div
+      className={`px-4 flex gap-4 items-center overflow-scroll no-scrollbar`}
+    >
       <Button
         className="w-fit relative"
         onClick={() => {

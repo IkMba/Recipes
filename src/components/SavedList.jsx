@@ -10,7 +10,6 @@ function SavedList() {
   const favourites = useSelector(getFavourites);
   const recipes =
     list === "bookmarks" ? bookmarks : list === "favourites" ? favourites : "";
-  console.log(recipes);
 
   if (recipes.length === 0)
     return (

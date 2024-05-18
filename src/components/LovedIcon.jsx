@@ -11,7 +11,6 @@ function LovedIcon({ item, size }) {
   const [loved, setLoved] = useState(false);
   const dispatch = useDispatch();
   const favourites = useSelector(getFavourites);
-  console.log(favourites);
 
   const handleFavourites = (e, item) => {
     e.preventDefault();

@@ -7,7 +7,6 @@ function BookmarkIcon({ item }) {
   const [booked, setBooked] = useState(false);
   const dispatch = useDispatch();
   const bookmarks = useSelector(getBookmarks);
-  console.log(bookmarks);
 
   const handleBookmarks = (e, item) => {
     e.preventDefault();

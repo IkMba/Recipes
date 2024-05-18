@@ -12,8 +12,6 @@ function Recipes() {
   const filter = useSelector(getFilters);
   const query = `&q=${searchQuery}${filter}`;
   const { recipes, isLoading } = useGetRecipes(query);
-  // console.log(filter);
-  // console.log(recipes);
 
   return (
     <div className=" px-8 pt-6 md:pl-16 md:pr-16 ">

@@ -23,8 +23,6 @@ function FilterButton({
     <div className="w-fit relative z-10">
       <div
         className="flex gap-2 items-center border-2 border-gray-500 rounded-md px-2 py-0.5 whitespace-nowrap cursor-pointer"
-        // onClick={() => title === queryString && setIsOpen((open) => !open)}
-        // onClick={handleClick}
         onClick={handleClick}
       >
         <h5>{title}</h5>

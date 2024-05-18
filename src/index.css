@@ -37,19 +37,20 @@ body,
   height: 100%;*/
   width: 100%;
 }
-
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 nav {
- animation: mobileMenu 0.3s ease forwards;
-
+  animation: mobileMenu 0.3s ease forwards;
 }
 
 @keyframes mobileMenu {
- 0% {
-     transform: translateY(-130%);
- }
- 100% {
-     transform: translateY(0);
- }
+  0% {
+    transform: translateY(-130%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes shimmer {
