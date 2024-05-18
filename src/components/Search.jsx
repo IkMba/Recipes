@@ -22,7 +22,7 @@ function Search() {
       onChange={(e) => setQuery(e.target.value)}
       ref={inputRef}
       onKeyDown={(e) => {
-        if (e.code === 13) {
+        if (e.key === "Enter") {
           navigate(`/recipes/${query}`);
         }
       }}
