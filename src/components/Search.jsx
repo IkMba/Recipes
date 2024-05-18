@@ -7,7 +7,7 @@ function Search() {
   const navigate = useNavigate();
   const inputRef = useRef(null);
 
-  useKey("Enter", function (e) {
+  useKey("Enter", function () {
     if (document.activeElement === inputRef.current) {
       navigate(`/recipes/${query}`);
       setQuery("");
@@ -21,6 +21,7 @@ function Search() {
       className="rounded-lg border-2 px-2 py-0 text-lg text-black w-48 h-10 md:min-w-96"
       onChange={(e) => setQuery(e.target.value)}
       ref={inputRef}
+      onKeyDown={useKey}
     />
   );
 }
