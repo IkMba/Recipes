@@ -1,6 +1,7 @@
 import { IoIosTimer } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useGetRecipes } from "../services/queries";
+import Img from "./LazyImage";
 
 function SmallCard({ queryType, value }) {
   const query = `&${queryType}=${value}`;
@@ -15,13 +16,13 @@ function SmallCard({ queryType, value }) {
 
     <Link
       to={`/recipe/${id}`}
-      className=" flex border-b pb-4 mb-4 border-gray-300"
+      className=" flex gap-2 border-b pb-4 mb-4 border-gray-300"
     >
       <figure className="relative">
-        <img
+        <Img
           src={recipe?.image}
           alt="recipe-image"
-          className="rounded-t-lg w-24 md:w-28 "
+          className={`rounded-t-lg w-24 `}
         />
       </figure>
       <div className="px-2 ">

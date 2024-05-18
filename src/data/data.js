@@ -12,12 +12,12 @@ export const navItems = [
     href: "contact",
   },
   {
-    name: "Blog",
-    href: "blog",
+    name: "Favourites",
+    href: "favourites",
   },
   {
-    name: "FAQ",
-    href: "faq",
+    name: "Bookmarks",
+    href: "bookmarks",
   },
 ];
 
@@ -124,4 +124,43 @@ export const healthCats = [
   "vegan",
   "vegetarian",
   "Wheat-free",
+];
+
+export const filterButtonData = [
+  {
+    id: 0,
+    data: cuisineTypes,
+    queryString: "cuisineType",
+    title: "Cuisine",
+  },
+  {
+    id: 1,
+    data: dishTypes,
+    queryString: "dish",
+    title: "Dish",
+  },
+  {
+    id: 2,
+    data: healthCats,
+    queryString: "health",
+    title: "Health",
+  },
+  {
+    id: 3,
+    data: dietTypes,
+    queryString: "diet",
+    title: "Diet",
+  },
+  {
+    id: 4,
+    data: timeTypes,
+    queryString: "time",
+    title: "Cooking time",
+  },
+  {
+    id: 5,
+    data: caloryTypes,
+    queryString: "calories",
+    title: "Calories",
+  },
 ];

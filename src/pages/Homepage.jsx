@@ -10,7 +10,7 @@ function Homepage() {
         <Hero />
         <Categories />
       </div>
-      <main className="mt-44 md:mt-56 lg:mt-44">
+      <main className="mt-44 md:mt-56 lg:mt-56 xl:mt-44">
         <Outlet />
       </main>
       <HealthCats />

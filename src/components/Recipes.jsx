@@ -2,16 +2,17 @@ import { useParams } from "react-router";
 import { useGetRecipes } from "../services/queries";
 import Card, { ShowMoreCard } from "./Card";
 import { useSelector } from "react-redux";
-import { getFilters } from "../slices/filterSlice";
+import { getFilters } from "../slices/appSlice";
 
 function Recipes() {
   const params = useParams();
   const searchQuery = params?.recipe;
 
   const filter = useSelector(getFilters);
-  const filters = filter.join("");
-  const query = `&q=${searchQuery}${filters}`;
+  const query = `&q=${searchQuery}${filter}`;
   const { recipes } = useGetRecipes(query);
+  // console.log(filter);
+  // console.log(recipes);
 
   return (
     <div className=" px-8 pt-6 md:pl-16 md:pr-16 ">
@@ -21,9 +22,9 @@ function Recipes() {
       <div className="flex flex-wrap gap-4 ">
         {recipes?.map((item, i) =>
           i === recipes.length - 1 ? (
-            <ShowMoreCard key={item.label} />
+            <ShowMoreCard key={i} />
           ) : (
-            <Card item={item} key={item.label} />
+            <Card item={item?.recipe} key={item.label} />
           )
         )}
       </div>

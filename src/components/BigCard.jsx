@@ -1,31 +1,25 @@
-// import { FaRegHeart } from "react-icons/fa";
-import { HeartOutline } from "react-ionicons";
-import { Heart } from "react-ionicons";
-import { Bookmark } from "react-ionicons";
-import { BookmarkOutline } from "react-ionicons";
 import { Link } from "react-router-dom";
 import { useGetRandom } from "../services/queries";
-import { useState } from "react";
+import LovedIcon from "./LovedIcon";
+import BookmarkIcon from "./BookmarkIcon";
+import Img from "./LazyImage";
 
 function BigCard() {
-  const [liked, setLiked] = useState("");
-  const [bookmark, setBookmark] = useState("");
   const { recipes } = useGetRandom();
   const recipe = recipes?.[0].recipe;
   // const {label,image,totalTime:time,cuisineType,uri} = recipe
   const id = recipe?.uri.split("_")[1];
 
   return (
-    <Link to={`/recipe/${id}`} className="grow shadow-md rounded-b-lg">
+    <Link to={`/recipe/${id}`} className="grow shadow-md rounded-b-lg ">
       <figure className="relative">
-        <img
+        <Img
           src={recipe?.image}
           alt="recipe-image"
-          className="rounded-xl w-full"
+          className={`rounded-t-lg w-full `}
         />
-        <button className="absolute right-4 top-3 text-2xl text-red ">
-          <Heart />
-          {liked && <HeartOutline />}
+        <button className="absolute right-4 top-5 text-2xl text-red ">
+          <LovedIcon item={recipe} size="30px" />
         </button>
       </figure>
       <div className="px-4 mt-4 pb-4">
@@ -35,10 +29,7 @@ function BigCard() {
             <h6>{recipe?.totalTime} minutes</h6>
             <h6 className="capitalize">{recipe?.cuisineType}</h6>
           </div>
-          <button className="text-red ">
-            <BookmarkOutline />
-            {bookmark && <Bookmark />}
-          </button>
+          <BookmarkIcon item={recipe} />
         </div>
       </div>
     </Link>

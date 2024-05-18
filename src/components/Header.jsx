@@ -5,10 +5,10 @@ import Button from "./Button";
 import { RiMenu3Fill } from "react-icons/ri";
 import { FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { SlMenu } from "react-icons/sl";
 
 function Header() {
   const [openNav, setOpenNav] = useState(false);
-  console.log(openNav);
   return (
     <header className="flex-between py-4 md:py-6 p-4 md:pl-16 md:pr-12 z-10 text-black relative">
       <div className="flex-between gap-12 lg:gap-16">
@@ -22,7 +22,7 @@ function Header() {
         <nav
           className={`${
             openNav
-              ? "flex-col flex bg-white absolute top-0 left-0 p-4 w-full"
+              ? "flex-col flex bg-white absolute top-0 left-0 p-4 w-full "
               : "hidden md:flex"
           }`}
         >
@@ -33,21 +33,21 @@ function Header() {
             />
           )}
           {navItems.map((item) => (
-            <a
+            <Link
               className={`${
                 openNav ? "mt-4 mx-auto" : "mr-6 text-md font-bold "
               }`}
-              href={item.href}
+              to={`/saved/${item.href}`}
               key={item.name}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
       <div>
         {!openNav && (
-          <RiMenu3Fill
+          <SlMenu
             className="md:hidden cursor-pointer text-xl"
             onClick={() => setOpenNav(true)}
           />

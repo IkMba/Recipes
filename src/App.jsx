@@ -7,9 +7,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import RecipesPage from "./pages/RecipesPage";
 import DetailsPage from "./pages/DetailsPage";
-import { Provider } from "react-redux";
-import store from "./slices/store";
 import HealthPage from "./pages/HealthPage";
+import SavedListPage from "./pages/SavedListPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -54,6 +53,10 @@ const router = createBrowserRouter([
         path: "/recipe/:id",
         element: <DetailsPage />,
       },
+      {
+        path: "/saved/:list",
+        element: <SavedListPage />,
+      },
     ],
   },
 ]);
@@ -61,10 +64,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Provider store={store}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <RouterProvider router={router}></RouterProvider>
-      </Provider>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <RouterProvider router={router}></RouterProvider>
     </QueryClientProvider>
   );
 }

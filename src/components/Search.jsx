@@ -19,7 +19,7 @@ function Search() {
     <input
       type="text"
       placeholder="Search recipes"
-      className="rounded-lg border-2 px-2 py-0 text-lg text-black w-40 h-10 md:min-w-96"
+      className="rounded-lg border-2 px-2 py-0 text-lg text-black w-48 h-10 md:min-w-96"
       onChange={(e) => setQuery(e.target.value)}
       ref={inputRef}
     />

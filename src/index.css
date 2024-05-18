@@ -25,3 +25,35 @@ body,
   color: #2d2b2b;
   box-sizing: border-box;
 }
+
+.lazy-load-image-background {
+  /* background-color: #fff3e0; */
+  /* background-color: #d39738; */
+  /* position: absolute; */
+  /* top: 0;
+  left: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;*/
+  width: 100%;
+}
+
+nav {
+ animation: mobileMenu 0.3s ease forwards;
+
+}
+
+@keyframes mobileMenu {
+ 0% {
+     transform: translateY(-130%);
+ }
+ 100% {
+     transform: translateY(0);
+ }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
