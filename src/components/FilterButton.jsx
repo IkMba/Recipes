@@ -31,7 +31,7 @@ function FilterButton({
         <GoChevronDown />
       </div>
       {open && (
-        <div className="absolute z-20 bg-white w-56 -right-[50%] p-2 flex flex-wrap gap-1 shadow-md overflow-y-auto">
+        <div className="absolute z-20 bg-white w-56 p-2 flex flex-wrap gap-1 shadow-md overflow-y-auto">
           {data.map((item) => (
             <LightButton
               key={item.label ? item.label : item}
