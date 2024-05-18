@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { healthCats } from "../data/data";
-import Button from "./Button";
 
 function HealthCats() {
   return (

@@ -96,7 +96,7 @@ export const healthCats = [
   "DASH",
   "egg-free",
   "fish-free",
-  " fodmap-free",
+  "fodmap-free",
   "gluten-free",
   "immuno-supportive",
   "keto-friendly",

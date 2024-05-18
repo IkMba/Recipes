@@ -8,8 +8,7 @@ function HealthRecipes() {
   const params = useParams();
   const searchQuery = params?.recipe;
 
-  const filter = useSelector(getFilters);
-  const filters = filter.join("");
+  const filters = useSelector(getFilters);
   const query = `&health=${searchQuery}${filters}`;
   const { recipes } = useGetRecipes(query);
 
