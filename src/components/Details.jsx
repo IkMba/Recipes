@@ -19,6 +19,8 @@ function Details() {
   console.log(recipe);
   // ingredients, time, calories, types, servings, metric;
 
+  if (isLoading) return <Loader />;
+
   return (
     <div className="px-6 md:px-24">
       <div className="relative ">
@@ -28,17 +30,14 @@ function Details() {
         <div className="absolute top-10 right-10 z-10">
           <LovedIcon size="30px" item={recipe} />
         </div>
-        {isLoading ? (
-          <div className="bg-orange h-[40vh] "></div>
-        ) : (
-          <Img
-            src={recipe?.image}
-            alt=""
-            className={`w-full md:h-96 object-cover bg-pink ${
-              !recipe?.image && "animate-pulse"
-            }`}
-          />
-        )}
+
+        <Img
+          src={recipe?.image}
+          alt=""
+          className={`w-full md:h-96 object-cover bg-pink ${
+            !recipe?.image && "animate-pulse"
+          }`}
+        />
       </div>
       <div className="mt-4">
         <div className="flex justify-between">
@@ -111,7 +110,14 @@ function Details() {
   );
 }
 
-const Loader = () => {
-  return <h1 className="text-5xl">Loading</h1>;
-};
+function Loader() {
+  return (
+    <div className="flex flex-col gap-8 mx-4 mt-8">
+      <div className="bg-pink h-[40vh] animate-pulse "></div>
+      <div className="bg-pink h-[10vh] animate-pulse "></div>
+      <div className="bg-pink h-[20vh] animate-pulse "></div>
+      <div className="bg-pink h-[15vh] animate-pulse "></div>
+    </div>
+  );
+}
 export default Details;

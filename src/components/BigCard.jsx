@@ -5,7 +5,7 @@ import BookmarkIcon from "./BookmarkIcon";
 import Img from "./LazyImage";
 
 function BigCard() {
-  const { recipes } = useGetRandom();
+  const { recipes, isLoading } = useGetRandom();
   const recipe = recipes?.[0].recipe;
   // const {label,image,totalTime:time,cuisineType,uri} = recipe
   const id = recipe?.uri.split("_")[1];
@@ -13,11 +13,15 @@ function BigCard() {
   return (
     <Link to={`/recipe/${id}`} className="grow shadow-md rounded-b-lg ">
       <figure className="relative">
-        <Img
-          src={recipe?.image}
-          alt="recipe-image"
-          className={`rounded-t-lg w-full `}
-        />
+        {isLoading ? (
+          <div className="bg-pink h-[40vh]"></div>
+        ) : (
+          <Img
+            src={recipe?.image}
+            alt="recipe-image"
+            className={`rounded-t-lg w-full `}
+          />
+        )}
         <button className="absolute right-4 top-5 text-2xl text-red ">
           <LovedIcon item={recipe} size="30px" />
         </button>
