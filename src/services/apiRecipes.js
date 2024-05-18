@@ -9,7 +9,6 @@ export const getRecipes = async (query) => {
 
     const results = await res.json();
     const data = results.hits;
-    // console.log(url)
 
     return data;
   } catch (err) {
@@ -36,9 +35,9 @@ export const getRandom = async () => {
 
     const results = await res.json();
     const data = results.hits;
-    console.log(data);
-    console.log(results);
-    console.log(url);
+    // console.log(data);
+    // console.log(results);
+    // console.log(url);
 
     return data;
   } catch (err) {

@@ -11,7 +11,10 @@ function BigCard() {
   const id = recipe?.uri.split("_")[1];
 
   return (
-    <Link to={`/recipe/${id}`} className="grow shadow-md rounded-b-lg ">
+    <Link
+      to={`/recipe/${id}`}
+      className="grow shadow-md rounded-b-lg max-w-[30rem]"
+    >
       <figure className="relative">
         {isLoading ? (
           <div className="bg-pink h-[40vh]"></div>

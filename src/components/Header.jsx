@@ -9,7 +9,7 @@ import { SlMenu } from "react-icons/sl";
 function Header() {
   const [openNav, setOpenNav] = useState(false);
   return (
-    <header className="flex-between py-4 md:py-6 p-4 md:pl-16 md:pr-12 z-50 text-black relative">
+    <header className="flex-between bg-pink py-4 md:py-6 p-4 md:pl-16 md:pr-12 z-50 text-black relative">
       <div className="flex-between gap-12 lg:gap-16">
         {!openNav && (
           <Link to="/">
@@ -38,6 +38,7 @@ function Header() {
               }`}
               to={`/saved/${item.href}`}
               key={item.name}
+              onClick={() => setOpenNav(false)}
             >
               {item.name}
             </Link>

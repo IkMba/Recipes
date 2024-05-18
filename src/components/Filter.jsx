@@ -18,10 +18,11 @@ function Filter() {
 
   return (
     <div
-      className={`px-4 flex gap-4 items-center overflow-scroll no-scrollbar`}
+      className={`px-4 md:pl-16 flex flex-wrap gap-2 md:gap-4 items-center no-scrollbar my-6 
+      } md:${isOpen && ""}`}
     >
       <Button
-        className="w-fit relative"
+        className="w-fit relative text-[14px] md:text-md px-1 py-1"
         onClick={() => {
           dispatch(addFilter(filteredData.join("")));
           setIsOpen(false);
@@ -51,7 +52,7 @@ function Filter() {
       ))}
       {hasFilter && (
         <h3
-          className="cursor-pointer text-orange"
+          className="cursor-pointer text-orange font-bold"
           onClick={() => {
             filterData.length = 0;
             dispatch(clearFilters());

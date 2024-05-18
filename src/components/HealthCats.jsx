@@ -13,10 +13,12 @@ function HealthCats() {
       </p>
       <div className="flex flex-wrap gap-2 justify-center">
         {healthCats.map((item) => (
-          <Link to={`/health/${item}`} key={item}>
-            <Button className="rounded-4xl bg-orange py-0.5 px-1 md:py-1 md:px-2 md:mt-2 text-sm">
-              {item}
-            </Button>
+          <Link
+            to={`/health/${item}`}
+            key={item}
+            className="rounded-4xl bg-orange font-semibold font-gatile px-1 py-0.5 rounded-md md:py-1 md:px-2 md:mt-2 text-[14px] md:text-sm"
+          >
+            {item}
           </Link>
         ))}
       </div>

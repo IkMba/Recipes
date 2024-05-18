@@ -20,16 +20,18 @@ function FilterButton({
     setIsOpen((open) => !open);
   };
   return (
-    <div className="w-fit relative z-10">
+    <div className="w-fit relative  ">
       <div
-        className="flex gap-2 items-center border-2 border-gray-500 rounded-md px-2 py-0.5 whitespace-nowrap cursor-pointer"
+        className={`flex gap-2 items-center border-2 border-gray-500 rounded-md px-2 py-0.5 whitespace-nowrap cursor-pointer text-[14px] md:text-md ${
+          open && "font-bold text-[16px]"
+        }`}
         onClick={handleClick}
       >
         <h5>{title}</h5>
         <GoChevronDown />
       </div>
       {open && (
-        <div className=" absolute z-10 bg-white w-56 p-2 flex flex-wrap gap-1 shadow-md">
+        <div className="absolute z-20 bg-white w-56 -right-[50%] p-2 flex flex-wrap gap-1 shadow-md overflow-y-auto">
           {data.map((item) => (
             <LightButton
               key={item.label ? item.label : item}

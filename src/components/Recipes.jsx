@@ -14,7 +14,7 @@ function Recipes() {
   const { recipes, isLoading } = useGetRecipes(query);
 
   return (
-    <div className=" px-8 pt-6 md:pl-16 md:pr-16 ">
+    <div className=" px-8 md:pl-16 md:pr-16 ">
       <h2 className="text-3xl font-bold font-gatile py-4 capitalize">
         {searchQuery} Recipes
       </h2>
