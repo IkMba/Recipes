@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 
-export function useKey(key, action) {
+export function useKey(key, code, action) {
   useEffect(() => {
     function callback(e) {
       if (e.code.toLowerCase() === key.toLowerCase()) {
         action();
       }
-      if (e.keyCode === "13") {
+      if (code === 13) {
         action();
       }
     }
