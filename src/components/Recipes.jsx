@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
 import { useGetRecipes } from "../services/queries";
-import Card, { ShowMoreCard } from "./Card";
+import Card from "./Card";
 import { useSelector } from "react-redux";
 import { getFilters } from "../slices/appSlice";
 import CardSket from "./CardSket";
@@ -21,12 +21,14 @@ function Recipes() {
       <div className="flex flex-wrap gap-4 ">
         {isLoading && [...Array(10)].map((i) => <CardSket key={i} />)}
         {!isLoading &&
-          recipes?.map((item, i) =>
-            i === recipes.length - 1 ? (
-              <ShowMoreCard key={i} />
-            ) : (
+          recipes?.map(
+            (item) => (
+              // i === recipes.length - 1 ? (
+              //   <ShowMoreCard key={i} />
+              // ) : (
               <Card item={item?.recipe} key={item.label} />
             )
+            // )
           )}
       </div>
     </div>

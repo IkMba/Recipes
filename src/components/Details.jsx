@@ -22,19 +22,19 @@ function Details() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="px-6 md:px-24">
-      <div className="relative ">
+    <div className="px-6 mt-4 md:mt-6 md:px-24">
+      <div className="relative w-full md:max-w-[550px]  mx-auto">
         <h1 className="absolute bg-white top-[40%] -left-4 text-3xl font-bold font-gatile w-[60%] md:w-[40%] md:text-4xl z-10">
           {recipe?.label}
         </h1>
-        <div className="absolute top-10 right-10 z-10">
+        <button className="absolute top-10 right-10 z-10">
           <LovedIcon size="30px" item={recipe} />
-        </div>
+        </button>
 
         <Img
           src={recipe?.image}
           alt=""
-          className={`w-full md:h-96 object-cover bg-pink ${
+          className={`w-full md:max-h-[50vh] bg-pink rounded-lg mx-auto ${
             !recipe?.image && "animate-pulse"
           }`}
         />
